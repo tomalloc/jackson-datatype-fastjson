@@ -5,23 +5,30 @@
     <artifactId>jackson-base</artifactId>
     <version>2.11.4</version>
   </parent>
-  <groupId>com.github.tomalloc</groupId>
+  <groupId>io.github.tomalloc</groupId>
   <artifactId>jackson-datatype-fastjson</artifactId>
   <packaging>bundle</packaging>
   <name>Jackson-datatype-fastjson</name>
   <version>2.11.4</version>
   <url>https://github.com/tomalloc/jackson-datatype-fastjson</url>
 
+  <developers>
+    <developer>
+      <name>tomalloc</name>
+      <email>tomalloc@163.com</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:https://github.com/tomalloc/jackson-datatype-fastjson.git</connection>
+    <url>https://github.com/tomalloc/jackson-datatype-fastjson</url>
+  </scm>
   <properties>
     <fastjson.version>1.2.79</fastjson.version>
     <!-- Generate PackageVersion.java into this directory. -->
     <packageVersion.dir>com/fasterxml/jackson/datatype/fastjson</packageVersion.dir>
     <packageVersion.package>com.fasterxml.jackson.datatype.fastjson</packageVersion.package>
   </properties>
-  <scm>
-    <connection>https://github.com/tomalloc/jackson-datatype-fastjson.git</connection>
-    <url>https://github.com/tomalloc/jackson-datatype-fastjson</url>
-  </scm>
+
   <licenses>
     <license>
       <name>The Apache License, Version 2.0</name>
