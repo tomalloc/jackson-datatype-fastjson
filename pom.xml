@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion> 
+  <parent>
+    <groupId>com.fasterxml.jackson</groupId>
+    <artifactId>jackson-base</artifactId>
+    <version>2.11.4</version>
+  </parent>
+  <groupId>com.github.jackson.datatype</groupId>
+  <artifactId>jackson-datatype-fastjson</artifactId>
+  <packaging>bundle</packaging>
+  <name>Jackson-datatype-fastjson</name>
+  <version>2.11.4</version>
+  <properties>
+    <fastjson.version>1.2.79</fastjson.version>
+    <!-- Generate PackageVersion.java into this directory. -->
+    <packageVersion.dir>com/fasterxml/jackson/datatype/fastjson</packageVersion.dir>
+    <packageVersion.package>com.fasterxml.jackson.datatype.fastjson</packageVersion.package>
+  </properties>
+  <scm>
+    <connection>https://github.com/tomalloc/jackson-datatype-fastjson.git</connection>
+    <url>https://github.com/tomalloc/jackson-datatype-fastjson</url>
+  </scm>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${fastjson.version}</version>
+      <optional>true</optional>
+    </dependency>
+
+
+    <!--  Test Dependencies -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.12.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.google.code.maven-replacer-plugin</groupId>
+        <artifactId>replacer</artifactId>
+        <executions>
+          <execution>
+            <id>process-packageVersion</id>
+            <phase>generate-sources</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+          <instructions combine.children="merge">
+            <Implementation-Vendor-Id>${packageVersion.package}</Implementation-Vendor-Id>
+            <Bundle-SymbolicName>${packageVersion.package}.${project.artifactId}</Bundle-SymbolicName>
+            <Export-Package>${packageVersion.package}</Export-Package>
+            <Automatic-Module-Name>${jdk.module.name}</Automatic-Module-Name>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
