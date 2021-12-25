@@ -10,6 +10,8 @@
   <packaging>bundle</packaging>
   <name>Jackson-datatype-fastjson</name>
   <version>2.11.4</version>
+  <url>https://github.com/tomalloc/jackson-datatype-fastjson</url>
+
   <properties>
     <fastjson.version>1.2.79</fastjson.version>
     <!-- Generate PackageVersion.java into this directory. -->
@@ -20,6 +22,12 @@
     <connection>https://github.com/tomalloc/jackson-datatype-fastjson.git</connection>
     <url>https://github.com/tomalloc/jackson-datatype-fastjson</url>
   </scm>
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
 
   <dependencies>
 

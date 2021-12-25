@@ -1,8 +1,6 @@
 Project to build [Jackson](https://github.com/FasterXML/jackson) extension module (jar) to support datatypes of ["fastjson" JSON library](https://github.com/alibaba/fastjson)
 
 
-Module is fully usable and officially released.
-
 ## Usage
 
 ### Maven dependency
@@ -11,9 +9,9 @@ To use module (version 2.x) on Maven-based projects, use following dependency:
 
 ```xml
 <dependency>
-  <groupId>com.eccloud.com.fasterxml.jackson.datatype</groupId>
-  <artifactId>jackson-datatype-fastjson</artifactId>
-  <version>2.9.0</version>
+    <groupId>com.github.tomalloc</groupId>
+    <artifactId>jackson-datatype-fastjson</artifactId>
+  <version>2.11.4</version>
 </dependency>
 ```
 
